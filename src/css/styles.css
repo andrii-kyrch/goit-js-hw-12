@@ -5,14 +5,151 @@
   |============================
 */
 /* Common styles */
+@import 'modern-normalize';
 @import url('./reset.css');
 @import url('./base.css');
 @import url('./container.css');
 @import url('./animations.css');
 
 /* Sections style */
-@import url('./header.css');
-@import url('./vite-promo.css');
-@import url('./badges.css');
-@import url('./back-link.css');
-@import url('./footer.css');
+
+.search-form {
+  display: flex;
+  column-gap: 8px;
+  justify-content: center;
+  padding-top: 36px;
+  margin-bottom: 32px;
+}
+
+.search-form-field {
+  border: 1px solid #808080;
+  border-radius: 4px;
+  width: 272px;
+  height: 40px;
+  padding: 8px 16px;
+  outline: transparent;
+  transition: border-color 250ms linear;
+}
+
+.search-form-field::placeholder {
+  color: #808080;
+}
+
+.search-form-field:hover {
+  border-color: #000000;
+}
+
+.search-form-field:focus {
+  border-color: #6c8cff;
+}
+
+.button {
+  min-width: 91px;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  background-color: #4e75ff;
+  font-weight: 500;
+  color: #ffffff;
+  transition: background-color 250ms linear;
+}
+
+.button:hover,
+.button:focus {
+  background-color: #6c8cff;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.gallery-item {
+  width: 360px;
+  height: 200px;
+  border: 1px solid #808080;
+  transition: scale 200ms linear;
+}
+
+.gallery-link {
+  display: block;
+  height: 152px;
+}
+
+.gallery-item:hover {
+  scale: 1.05;
+}
+
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.img-stats {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 48px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 12px;
+  line-height: 2;
+}
+
+.stat-label {
+  font-weight: 600;
+  line-height: 1.33;
+}
+
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 48px;
+  height: 48px;
+  border: 5px solid #4e75ff;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.load-more-btn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 32px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
